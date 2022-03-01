@@ -1,32 +1,10 @@
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 3000;
+const { initDbConnection } = require('./config/dbConnect');
 
-async function main(){
-    const { MongoClient, ServerApiVersion } = require('mongodb');
-    const uri = "mongodb+srv://venus:venus@venus-hackathon.rhq2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    const client = new MongoClient(uri);
-    try {
-        // Connect to the MongoDB cluster
-        const db = await client.connect();
-        console.log(db)
-        
-        console.log('Db Connected!');
-        // await users.find();
-        // console.log(test)
-        // Make the appropriate DB calls
-        // await  listDatabases(client);
- 
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
-
-main().catch(console.error);
-
+initDbConnection();
 
 
 app.get('/', (req, res) => {
@@ -35,6 +13,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`);
 });

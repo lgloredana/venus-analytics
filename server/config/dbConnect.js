@@ -1,33 +1,19 @@
-// const connectToDB = () => {
-//     const { MongoClient, ServerApiVersion } = require('mongodb');
-//     const uri = "mongodb+srv://<venus>:<venus>@venus-hackathon.rhq2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-//     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-//     client.connect(err => {
-//       console.log('Connected to DB successfully!')
-//       const collection = client.db("test").collection("devices");
-//       // perform actions on the collection object
-//       client.close();
-//     });
-// }
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@venus-hackathon.rhq2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majorityz`;
+const client = new MongoClient(uri);
 
+const initDbConnection = async () => {
+    try {
+      await client.connect();
+      const usersCollection = client.db('venus-db').collection('users');
+      const findUsers = await usersCollection.findOne({ name: 'John Doe' });
+      console.log('Connection to venus-db was successfully!, user found =>', findUsers);
+    } catch (e) {
+		console.error(e);
+		await client.close();
+    } finally {
+        await client.close();
+    }
+}
 
-// module.export = connectToDB;
-
-// const { MongoClient } = require("mongodb");
-// // Connection URI
-// const uri = "mongodb+srv://<venus>:<venus>@venus-hackathon.rhq2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// // Create a new MongoClient
-// const client = new MongoClient(uri);
-// async function run() {
-//   try {
-//     // Connect the client to the server
-//     await client.connect();
-//     // Establish and verify connection
-//     await client.db("admin").command({ ping: 1 });
-//     console.log("Connected successfully to server");
-//   } finally {
-//     // Ensures that the client will close when you finish/error
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
+module.exports = { initDbConnection };
