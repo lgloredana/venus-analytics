@@ -31,7 +31,8 @@ exports.fetchEvents = async (req, res) => {
 // Get Event Count by User
 exports.countEvents = async (req, res) => {
   try {
-    const { analyticsType } = req.body;
+    console.log(req.query)
+    const { analyticsType } = req.query;
     let payload = {};
     let type = '';
 
