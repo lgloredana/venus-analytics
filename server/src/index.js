@@ -1,6 +1,7 @@
 require('dotenv').config({ path: '../.env' });
 
 import express from 'express';
+import cors from 'cors';
 
 import { connectDB } from './config/db';
 
@@ -9,6 +10,7 @@ const app = express();
 
 /** Middlewares */
 app.use(express.json({ extended: false }));
+app.use(cors());
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -17,6 +19,7 @@ app.use((err, req, res, next) => {
 
 /** Define Routes */
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/events', require('./routes/api/events'));
 
 connectDB(() => {
   // Start Server
