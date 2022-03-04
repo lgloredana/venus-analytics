@@ -8,6 +8,8 @@ import CovidTesting from "./CovidTesting";
 import Dashboard from "./Dashboard";
 import FaceMask from "./FaceMask";
 import MothersDay from "./MothersDay";
+import ChartsData from "./ShowCharts";
+
 import { makeStyles } from '@material-ui/core/styles';
 import Start from "./Start";
 import { Typography } from "@material-ui/core";
@@ -61,6 +63,8 @@ const App = () => {
             <Route path="/covidtesting" element={<CovidTesting />} />
             <Route path="/facemask" element={<FaceMask />} />
             <Route path="/facemask" element={<Dashboard />} />
+            <Route path="/charts" element={<ChartsData />} />
+
         </Routes>
       </Container>
   </div>

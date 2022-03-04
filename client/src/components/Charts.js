@@ -8,7 +8,7 @@ const Charts = (props) => {
     const chart = useRef(null);
   
       useLayoutEffect(() => {
-        let chart = am4core.create("chartdivPages", am4charts.PieChart);
+         chart = am4core.create("chartdivPages", am4charts.PieChart);
     
         chart.data = data
     
