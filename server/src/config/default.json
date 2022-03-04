@@ -1,3 +1,3 @@
 {
-  "mongoURI": "mongodb+srv://<user>:<password>@venus-hackathon.rhq2f.mongodb.net/venus-db?retryWrites=true"
+  "mongoURI": "mongodb+srv://<user>:<password>@demo.xaatr.mongodb.net/venus-db?retryWrites=true&w=majority"
 }

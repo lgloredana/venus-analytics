@@ -5,7 +5,6 @@ process.env.NODE_CONFIG_DIR = __dirname;
 const config = require('config');
 
 let db = config.get('mongoURI');
-
 db = db.replace('<user>', process.env.DB_USERNAME);
 db = db.replace('<password>', process.env.DB_PASSWORD);
 
