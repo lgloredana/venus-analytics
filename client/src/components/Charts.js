@@ -12,7 +12,7 @@ const Charts = (props) => {
     
         let pieSeries = chart.series.push(new am4charts.PieSeries());
         pieSeries.dataFields.value = "count";
-        pieSeries.dataFields.category ="page";
+        pieSeries.dataFields.category ="_id";
         return () => {
           chart.dispose();
         };
