@@ -18,6 +18,7 @@ const OnlineClinic = () => {
     <Typography variant="h4">
       Acne Online Clinic 
     </Typography>
+    <img src="https://www.thedermatologyclinic.london/wp-content/uploads/2018/07/patient-hub-02-large.jpg"/>
     <p></p>
     <Typography variant="h6">
       Get convenient access to prescription-only medicines to help treat mild or moderate acne without having to visit your doctor*.
