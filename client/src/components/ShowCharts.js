@@ -7,20 +7,15 @@ const ShowCharts = () => {
 
     useLayoutEffect(() => {
      
-      let pages =  async() => {
+       let pages =  async() => {
        const response =  await getEvent({analyticsType: 'pages'});
-       console.log('rrr' , response)
-       const data = await response.json();
-         return data;
-      } 
-       const pageData =  pages();
-      
-        setPagesData(pageData.events)
+       console.log('==++++=====',response)
+        setPagesData(response)
 
-      
-        console.log('pagesData',pagesData)
-        
-      },[pagesData]);
+      } 
+        pages();
+              
+      },[]);
 
 return(
     

@@ -6,12 +6,9 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 const Charts = (props) => {
     const {chartName, data, itemName} = props;
     const chart = useRef(null);
-  
       useLayoutEffect(() => {
        let  chart = am4core.create("chartdivPages", am4charts.PieChart);
-       
-        const xxx = [{"page":"Page1","count":1}, {"page":"Page2","count":1}, {"page":"Page3","count":1}]
-        chart.data = xxx
+       chart.data = data
     
         let pieSeries = chart.series.push(new am4charts.PieSeries());
         pieSeries.dataFields.value = "count";
@@ -19,7 +16,7 @@ const Charts = (props) => {
         return () => {
           chart.dispose();
         };
-      }, []);
+      }, [data]);
   
     return ( 
       <>   
