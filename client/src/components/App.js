@@ -1,16 +1,15 @@
-import { AppBar, Button, Container, CssBaseline, IconButton, Paper, Toolbar } from "@mui/material";
+import { AppBar, Badge, Button, Container, CssBaseline, IconButton, Paper, Toolbar } from "@mui/material";
 import React from "react";
 import getEvent from "../utils/getEvents";
 import postEvent from "../utils/postEvents";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import OnlineClinic from "./OnlineClinic";
-import CovidTesting from "./CovidTesting";
 import Dashboard from "./Dashboard";
-import FaceMask from "./FaceMask";
-import MothersDay from "./MothersDay";
 import { makeStyles } from '@material-ui/core/styles';
 import Start from "./Start";
 import { Typography } from "@material-ui/core";
+import Howitworks from "./Howitworks";
+import Treatment from "./Treatment";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -30,7 +29,6 @@ const useStyles = makeStyles(theme => ({
     width:"75%",
   },
   toolbar:{
-    border: '1px solid black',
   },
   backButton:{
     alignItems:"right",
@@ -40,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 const App = () => {
   const classes = useStyles();
   const navigate  = useNavigate();
-
+  const location = useLocation();
   return  (
 <div>
       <CssBaseline />
@@ -48,19 +46,19 @@ const App = () => {
         <AppBar position="static">
          <Toolbar className={classes.toolbar}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Hackathon Analitics
+            Hackathon Analitycs
           </Typography>
           <div className={classes.space}></div>
-          <Button className={classes.backButton}  onClick={(event) => {navigate("/");}} color="inherit">Back</Button>
+          <Button className={classes.backButton}  onClick={(event) => {navigate("/dashboard");}} color="inherit"> Analitycs Dashboard</Button>
+          <Button className={classes.backButton}  onClick={(event) => {navigate("/");}} color="inherit"> {location.pathname === '/' ? "": 'Back' }</Button>
           </Toolbar>
         </AppBar>
         <Routes>
             <Route path="/" element={<Start />}/>
             <Route path="/onlineClinic" element={<OnlineClinic />} />
-            <Route path="/mothersday" element={<MothersDay />} />
-            <Route path="/covidtesting" element={<CovidTesting />} />
-            <Route path="/facemask" element={<FaceMask />} />
-            <Route path="/facemask" element={<Dashboard />} />
+            <Route path="/howitworks" element={<Howitworks />} />
+            <Route path="/treatment" element={<Treatment />} />
+            <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Container>
   </div>
