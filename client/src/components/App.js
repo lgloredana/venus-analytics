@@ -46,10 +46,10 @@ const App = () => {
         <AppBar position="static">
          <Toolbar className={classes.toolbar}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Hackathon Analitycs
+            Hackathon Analytics
           </Typography>
           <div className={classes.space}></div>
-          <Button className={classes.backButton}  onClick={(event) => {navigate("/dashboard");}} color="inherit"> Analitycs Dashboard</Button>
+          <Button className={classes.backButton}  onClick={(event) => {navigate("/dashboard");}} color="inherit"> Analytics Dashboard</Button>
           <Button className={classes.backButton}  onClick={(event) => {navigate("/");}} color="inherit"> {location.pathname === '/' ? "": 'Back' }</Button>
           </Toolbar>
         </AppBar>
