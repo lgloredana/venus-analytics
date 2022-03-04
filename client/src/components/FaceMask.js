@@ -1,3 +1,4 @@
+import React from "react";
 const FaceMask = () => { 
   return <div>
     <h2>Face Mask</h2>
