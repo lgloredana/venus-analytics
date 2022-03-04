@@ -12,3 +12,8 @@ This is a learning repo which is using MERN technologies
 
     npm i
     npm run dev
+
+# Start client (navigate to /client)
+
+    npm i
+    npm run start
