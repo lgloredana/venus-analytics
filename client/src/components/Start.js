@@ -38,49 +38,46 @@ const Start = () => {
   return (
     <div>
        <Grid className={classes.grid} container direction="row" spacing={3} xs="12" justifyContent="center" aligneItems="center">
-          <Grid  item  xs={12} sm={6} md={3} >
+          <Grid  item   >
             <Card className={classes.card} sx={{ minWidth: 275 }}>
                 <CardActionArea onClick={(event) => {navigate("/onlineClinic");}}>
                   <CardHeader
-                    title="Acne Online Clinic"
-                    subheader="Get convenient access to prescription-only medicines to help treat mild or moderate acne without having to visit your doctor*"
+                    title="Boots Acne Online Clinic "
                   />
                   <CardMedia
                     component="img"
                     className={classes.media}
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBi-6qNnFnxmIzT2nSYTnn4XNo7O2ApmCDQdxQbNhZQNYUEnI5_0nHKLlHFx285BPABqQ&usqp=CAU"
+                    image="https://www.thedermatologyclinic.london/wp-content/uploads/2018/07/patient-hub-02-large.jpg"
                     alt="online clinic"
                   />
                 </CardActionArea>
               </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}  >
+          <Grid item   >
             <Card className={classes.card}  sx={{ minWidth: 275 }}>
-              <CardActionArea>
+              <CardActionArea onClick={(event) => {navigate("/howitworks");}}>
                 <CardHeader
-                  title="Acne Online Clinic"
-                  subheader="Get convenient access to prescription-only medicines to help treat mild or moderate acne without having to visit your doctor*"
+                  title="How the online clinic works"
                 />
                 <CardMedia
                   component="img"
                   className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBi-6qNnFnxmIzT2nSYTnn4XNo7O2ApmCDQdxQbNhZQNYUEnI5_0nHKLlHFx285BPABqQ&usqp=CAU"
+                  image="https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-online-doctor-consultation-image_2248276.jpg"
                   alt="online clinic"
                 />
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} >
+          <Grid item  >
           <Card className={classes.card}  sx={{ minWidth: 275 }}>
-              <CardActionArea>
+              <CardActionArea onClick={(event) => {navigate("/treatment");}}>
                 <CardHeader
-                  title="Acne Online Clinic"
-                  subheader="Get convenient access to prescription-only medicines to help treat mild or moderate acne without having to visit your doctor*"
+                  title="Acne treatment options"
                 />
                 <CardMedia
                   component="img"
                   className={classes.media}
-                  image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBi-6qNnFnxmIzT2nSYTnn4XNo7O2ApmCDQdxQbNhZQNYUEnI5_0nHKLlHFx285BPABqQ&usqp=CAU"
+                  image="https://images.everydayhealth.com/images/reasons-you-may-need-to-change-your-psoriatic-arthritis-treatment-1440x810.jpg"
                   alt="online clinic"
                 />
               </CardActionArea>
