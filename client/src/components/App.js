@@ -7,7 +7,7 @@ import OnlineClinic from "./OnlineClinic";
 import Dashboard from "./Dashboard";
 import FaceMask from "./FaceMask";
 import MothersDay from "./MothersDay";
-import ChartsData from "./ShowCharts";
+import ShowCharts from "./ShowCharts";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Start from "./Start";

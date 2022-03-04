@@ -2,9 +2,9 @@ import axios from "axios";
 import { userName } from "../constants";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3001/api/',
+    baseURL: 'http://localhost:3000/api/',
     timeout: 5000,
-    params: { userName }
+ //   params: { userName }
 });
 
 // Add a request interceptor

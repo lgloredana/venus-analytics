@@ -1,10 +1,10 @@
 import axiosInstance from "../middleware/axios";
 import { userName } from "../constants";
 
-const getEvent = async () => {
+const getEvent = async (params={}) => {
 	try {
-		const params = {};
-		const response = await axiosInstance.get('events', params)
+	
+		const response = await axiosInstance.get('events/analytics', {params})
         const { data } = response.data;
 		console.log(data)
 		return data;
