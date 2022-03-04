@@ -5,15 +5,13 @@ import postEvent from "../utils/postEvents";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import OnlineClinic from "./OnlineClinic";
 import Dashboard from "./Dashboard";
-import FaceMask from "./FaceMask";
-import MothersDay from "./MothersDay";
-import ShowCharts from "./ShowCharts";
-
 import { makeStyles } from '@material-ui/core/styles';
 import Start from "./Start";
 import { Typography } from "@material-ui/core";
 import Howitworks from "./Howitworks";
 import Treatment from "./Treatment";
+
+import ShowCharts from "./ShowCharts";
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -58,12 +56,12 @@ const App = () => {
           </Toolbar>
         </AppBar>
         <Routes>
-            <Route path="/" element={<Start />}/>
-            <Route path="/onlineClinic" element={<OnlineClinic />} />
-            <Route path="/howitworks" element={<Howitworks />} />
-            <Route path="/treatment" element={<Treatment />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/charts" element={<ChartsData />} />
+        <Route path="/" element={<Start />}/>
+        <Route path="/onlineClinic" element={<OnlineClinic />} />
+         <Route path="/howitworks" element={<Howitworks />} />
+        <Route path="/treatment" element={<Treatment />} />
+        <Route path="/charts" element={<ShowCharts />} />
+
 
         </Routes>
       </Container>
