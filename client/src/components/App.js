@@ -11,6 +11,8 @@ import { Typography } from "@material-ui/core";
 import Howitworks from "./Howitworks";
 import Treatment from "./Treatment";
 
+import ShowCharts from "./ShowCharts";
+
 const useStyles = makeStyles(theme => ({
   paper: {
     margin: theme.spacing(8),
@@ -54,11 +56,13 @@ const App = () => {
           </Toolbar>
         </AppBar>
         <Routes>
-            <Route path="/" element={<Start />}/>
-            <Route path="/onlineClinic" element={<OnlineClinic />} />
-            <Route path="/howitworks" element={<Howitworks />} />
-            <Route path="/treatment" element={<Treatment />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Start />}/>
+        <Route path="/onlineClinic" element={<OnlineClinic />} />
+         <Route path="/howitworks" element={<Howitworks />} />
+        <Route path="/treatment" element={<Treatment />} />
+        <Route path="/charts" element={<ShowCharts />} />
+
+
         </Routes>
       </Container>
   </div>
