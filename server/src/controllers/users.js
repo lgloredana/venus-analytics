@@ -2,7 +2,7 @@ import User from '../models/User';
 
 // Register User Controller
 exports.registerUser = async (req, res) => {
-  const { name, email } = req.body;
+  const { name, email, userId } = req.body;
 
   try {
     let user = await User.findOne({ email });
@@ -12,7 +12,7 @@ exports.registerUser = async (req, res) => {
       res.status(400).json({ errors: [{ msg: 'User already exists' }] });
     }
 
-    user = new User({ name, email });
+    user = new User({ name, email, userId });
     await user.save();
 
     res.send({ status: 201, data: { user } });

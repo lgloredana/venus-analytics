@@ -17,6 +17,7 @@ app.use((err, req, res, next) => {
 
 /** Define Routes */
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/events', require('./routes/api/events'));
 
 connectDB(() => {
   // Start Server
