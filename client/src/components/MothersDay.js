@@ -1,3 +1,4 @@
+import React from "react";
 const MothersDay = () => {
   return (
     <div className="MothersDay">
