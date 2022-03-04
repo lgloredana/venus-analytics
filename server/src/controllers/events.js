@@ -36,17 +36,33 @@ exports.countEvents = async (req, res) => {
     let type = '';
 
     switch (analyticsType) {
-      case 'button':
+      case 'allEvents':
         payload = await Event.aggregate([
           { $group: { _id: '$username', count: { $sum: 1 } } }
         ]);
-        type = 'button';
+        type = 'allEvents';
 
         break;
-      case 'page':
+      case 'pages':
+        payload = await Event.aggregate([
+          { $group: { _id: '$page', count: { $sum: 1 } } }
+        ]);
+        type = 'pages';
+
+        break;
+      case 'elements':
+        payload = await Event.aggregate([
+          { $group: { _id: '$elementName', count: { $sum: 1 } } }
+        ]);
+        type = 'elements';
+
+        break;
 
       default:
-      // error
+        res.status(400).send({
+          errors: [{ msg: 'Bad Request, send a valid analytics type' }]
+        });
+        break;
     }
 
     res.status(200).json({ status: 200, type, data: payload });

@@ -19,9 +19,9 @@ router.post('/', validate.registerEvent, eventController.registerEvent);
 // @access   Public
 router.get('/', eventController.fetchEvents);
 
-// @route    GET api/events/event-count-allusers
-// @desc     Returns button count for every event and all users
+// @route    GET api/events/analytics
+// @desc     Returns custom analytics given specified parameters
 // @access   Public
-router.get('/event-count-allusers', eventController.countEvents);
+router.get('/analytics', eventController.countEvents);
 
 module.exports = router;
